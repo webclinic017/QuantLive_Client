@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:quantlive_client/Pages/QuantDescriptionPage/QuantDesciptionPage.dart';
 import 'Pages/MainPage/MainPage.dart';
+import 'Pages/QuantDetailInfoPage/QuantDetailInfoPage.dart';
 
 void main() {
   runApp(MyApp());
@@ -16,6 +18,8 @@ class MyApp extends StatelessWidget {
       initialRoute: "/",
       getPages: [
         GetPage(name: '/', page: () => MainPage()),
+        GetPage(name: '/quantDescriptionPage', page: () => QuantDescriptionPage()),
+        GetPage(name: '/quantDetailInfoPage', page: () => QuantDetailInfoPage()),
       ],
       home: MainPage(),
     );

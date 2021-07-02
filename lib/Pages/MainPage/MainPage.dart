@@ -1,6 +1,8 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:quantlive_client/Common/Defines.dart';
+import 'package:quantlive_client/Common/Widgets.dart';
 
 class MainPage extends StatefulWidget {
   const MainPage({Key? key}) : super(key: key);
@@ -31,13 +33,60 @@ class _MainPageState extends State<MainPage> {
 
               SizedBox(height: 8),
 
-              quantListItem("강환국 슈퍼가치전략", "PBR, PER 등을 통한 가치투자 전략입니다."),
+              quantListItem(
+                  "강환국 슈퍼가치전략", "PBR, PER 등을 통한 가치투자 전략입니다.",
+                onItemTapped: (){
+                    print("콜밲!");
+                    Get.toNamed("/quantDetailInfoPage",arguments: QuantType.KANG_SUPER_VALUE);
+                },
+                onTooltipTapped: (){
+                    print("툴팁!");
+                }
+              ),
 
-              quantListItem("강환국 슈퍼가치전략", "PBR, PER 등을 통한 가치투자 전략입니다."),
+              quantListItem(
+                  "슈퍼벨류모멘텀", "순유동자산 전략입니다.",
+                  onItemTapped: (){
+                    print("콜밲!");
+                    Get.toNamed("/quantDetailInfoPage",arguments: QuantType.SUPER_VALUE_MOMENTUM);
+                  },
+                  onTooltipTapped: (){
+                    print("툴팁!");
+                  }
+              ),
 
-              quantListItem("강환국 슈퍼가치전략", "PBR, PER 등을 통한 가치투자 전략입니다."),
+              quantListItem(
+                  "NCAV", "PBR, PER 등을 통한 가치투자 전략입니다.",
+                  onItemTapped: (){
+                    print("콜밲!");
+                    Get.toNamed("/quantDetailInfoPage",arguments: QuantType.NCAV);
+                  },
+                  onTooltipTapped: (){
+                    print("툴팁!");
+                  }
+              ),
+              quantListItem(
+                  "신마법공식 2.0", "PBR, PER 등을 통한 가치투자 전략입니다.",
+                  onItemTapped: (){
+                    print("콜밲!");
+                    Get.toNamed("/quantDetailInfoPage",arguments: QuantType.NEW_MAGIC_FORMULA_2);
+                  },
+                  onTooltipTapped: (){
+                    print("툴팁!");
+                  }
+              ),
 
-              quantListItem("강환국 슈퍼가치전략", "PBR, PER 등을 통한 가치투자 전략입니다."),
+              quantListItem(
+                  "슈퍼퀄리티 2.0", "PBR, PER 등을 통한 가치투자 전략입니다.",
+                  onItemTapped: (){
+                    print("콜밲!");
+                    Get.toNamed("/quantDetailInfoPage",arguments: QuantType.SUPER_QUALITY_2);
+                  },
+                  onTooltipTapped: (){
+                    print("툴팁!");
+                  }
+              ),
+
 
             ],
           ),
@@ -47,74 +96,4 @@ class _MainPageState extends State<MainPage> {
   }
 }
 
-Widget quantListItem(String title, String content){
-  return Container(
-    width: Get.width,
-    height: 80,
-    decoration: BoxDecoration(
-      color: Colors.yellow,
-      borderRadius: BorderRadius.all(Radius.circular(8)),
-      gradient: LinearGradient(
-        begin: Alignment.topRight,
-        end: Alignment.bottomLeft,
-        colors: [
-          Color.fromARGB(255, 45, 115, 231),
-          Color.fromARGB(255, 71, 188, 238),
-        ],
-      )
-    ),
-    padding: EdgeInsets.all(16),
-    margin: EdgeInsets.only(top: 8, bottom: 8),
-    //color: Colors.red,
-    child: Row(
-      mainAxisAlignment: MainAxisAlignment.spaceBetween,
-      children: [
-
-        Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
-          mainAxisAlignment: MainAxisAlignment.center,
-          mainAxisSize: MainAxisSize.max,
-          children: [
-
-            Text(
-              "강환국 슈퍼가치전략",
-              style: TextStyle(
-                  fontFamily: "NanumSquareB",
-                  fontWeight: FontWeight.bold,
-                  color: Colors.white,
-                  fontSize: 20
-              ),
-            ),
-
-            SizedBox(height: 4),
-
-            Text(
-              "PER, PBR 등을 통한 가치투자 전략입니다.",
-              style: TextStyle(
-                  fontFamily: "NanumSquare",
-                  color: Colors.white,
-                  fontSize: 14
-              ),
-            ),
-
-          ],
-        ),
-
-        Container(
-          width: 40,
-          child: Center(
-            child: IconButton(
-              icon: Icon(Icons.info_outline),
-              color: Colors.white,
-              onPressed: () {
-                print("Hello!");
-              },
-            ),
-          )
-        )
-
-      ],
-    ),
-  );
-}
 
