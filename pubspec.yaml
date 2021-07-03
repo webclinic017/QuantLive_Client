@@ -27,6 +27,9 @@ dependencies:
   http:
   future_progress_dialog:
   webview_flutter:
+  flutter_vibrate:
+  flutter_native_splash:
+    
 
 
   # The following adds the Cupertino Icons font to your application.

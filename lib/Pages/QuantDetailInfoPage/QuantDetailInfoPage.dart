@@ -4,6 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:get/get.dart';
 import 'package:quantlive_client/Common/Defines.dart';
+import 'package:quantlive_client/Common/Util.dart';
 import 'package:quantlive_client/Common/Widgets.dart';
 import 'package:quantlive_client/Models/QuantItemModel/KangSuperValueModel.dart';
 import 'package:quantlive_client/Models/QuantItemModel/MagicFormulaQuantModel.dart';
@@ -151,7 +152,12 @@ class _QuantDetailInfoPageState extends State<QuantDetailInfoPage> {
           },
           onTooltipTapped: (){
             Clipboard.setData(ClipboardData(text: quantData.quantJname));
-            Get.snackbar("알림", "종목명이 복사되었습니다.");
+            Get.snackbar("알림",
+                "'${quantData.quantJname}' 종목명이 복사되었습니다.",
+                animationDuration: Duration(seconds: 1),
+              snackPosition: SnackPosition.BOTTOM
+            );
+            launchVibrate();
           }
       );
     }
@@ -164,7 +170,12 @@ class _QuantDetailInfoPageState extends State<QuantDetailInfoPage> {
           },
           onTooltipTapped: (){
             Clipboard.setData(ClipboardData(text: quantData.quantJname));
-            Get.snackbar("알림", "종목명이 복사되었습니다.");
+            Get.snackbar("알림",
+                "'${quantData.quantJname}' 종목명이 복사되었습니다.",
+                animationDuration: Duration(seconds: 1),
+                snackPosition: SnackPosition.BOTTOM
+            );
+            launchVibrate();
           }
       );
     }
@@ -177,7 +188,12 @@ class _QuantDetailInfoPageState extends State<QuantDetailInfoPage> {
           },
           onTooltipTapped: (){
             Clipboard.setData(ClipboardData(text: quantData.quantJname));
-            Get.snackbar("알림", "종목명이 복사되었습니다.");
+            Get.snackbar("알림",
+                "'${quantData.quantJname}' 종목명이 복사되었습니다.",
+                animationDuration: Duration(seconds: 1),
+                snackPosition: SnackPosition.BOTTOM
+            );
+            launchVibrate();
           }
       );
     }
